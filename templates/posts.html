@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+Новости
+{% endblock title %}
+
+{% block content %}
+    <br>
+    <div class="container">
+        <h2>Все посты:</h2>
+    </div>
+
+    <div class="container">
+        <div class="row" style="margin-top:50px">
+        {% for post in post_list %}
+            <div class="col-md-auto">
+                <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">{{ post.title_post }}</h4>
+                          <span class="card-subtitle mb-2 text-muted">{{ post.author_post }}</span>
+                          <span class="card-subtitle mb-2 text-muted">|</span>
+                          <span class="card-subtitle mb-2 text-muted">{{ post.date_time_post|date:'d M Y' }}</span>
+                          <p class="card-text">{{ post.text_post| truncatechars:20 }}</p>
+                          {% for category in post.categories_post.all %}
+                          <a href="#" class="card-link">#{{ category }}</a>
+                          {% endfor %}
+                          <a href="{{ div.get_absolute_url }}" class="card-link">Читать</a>
+                      </div>
+                </div>
+                <br>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

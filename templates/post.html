@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+Post
+{% endblock title %}
+
+
+{% block content %}
+<h1>{{ post_list.title_post }}</h1>
+<h3>{{ post_list.date_time_post |date:'d M Y' }}</h3>
+<p>{{ post_list.text_post }}</p>
+{% endblock content %}

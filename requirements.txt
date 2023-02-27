@@ -1,0 +1,15 @@
+Django
+django-filter==22.1
+python-dotenv
+django-allauth
+django-apscheduler
+celery
+redis
+django-ckeditor
+python-decouple
+django-rest-framework
+django-celery-beat
+crispy-bootstrap5
+django-crispy-forms
+django-ckeditor-5
+
